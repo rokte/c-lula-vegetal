@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Célula Vegetal 3D</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.95/build/spline-viewer.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #0d1310;
+            color: #f8fafc;
+            display: flex;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .texto-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 5% 0 8%;
+            z-index: 2;
+            background: linear-gradient(90deg, #0d1310 80%, transparent);
+        }
+
+        .tag {
+            color: #4ade80; /* Verde neon */
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .av {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 14px 24px;
+            background-color: rgba(74, 222, 128, 0.13);
+            color: #4ade80;
+            text-decoration: none;
+            border: 1px solid rgba(74, 222, 128, 0.35);
+            border-radius: 8px;
+            font-weight: 700;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .av:hover {
+            background-color: rgba(74, 222, 128, 0.22);
+            transform: translateY(-1px);
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        h1 span {
+            color: #4ade80; 
+        }
+
+        p {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: #a1a1aa; 
+            max-width: 500px;
+            margin-bottom: 40px;
+        }
+
+        
+        .dica-interativa {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(74, 222, 128, 0.05);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            border-left: 4px solid #4ade80;
+            padding: 16px 24px;
+            border-radius: 8px;
+            color: #e2e8f0;
+            font-weight: 500;
+            max-width: fit-content;
+        }
+
+       
+        .modelo-container {
+            flex: 1.2; 
+            height: 100vh;
+            position: relative;
+        }
+
+        spline-viewer {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Responsividade para Celulares e Tablets */
+        @media (max-width: 900px) {
+            body {
+                overflow-y: auto; /* Permite rolar no celular */
+            }
+            .container {
+                flex-direction: column; /* Coloca um embaixo do outro */
+            }
+            .texto-container {
+                padding: 60px 30px;
+                background: #0d1310;
+                min-height: 50vh;
+                text-align: center;
+                align-items: center;
+            }
+            .modelo-container {
+                height: 60vh;
+                width: 100%;
+            }
+            h1 {
+                font-size: 3rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+           
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="texto-container">
+            <span class="tag">Exploração Biológica</span>
+            <h1>A Célula <br><span>Vegetal</span></h1>
+            
+            <p>
+                A célula vegetal é uma unidade biológica fascinante, funcionando como uma verdadeira fábrica de energia sustentável. Explore a sua arquitetura tridimensional, desde a parede celular até aos cloroplastos responsáveis pela fotossíntese.
+            </p>
+
+            <div class="dica-interativa">
+                🖱️ Clique e arraste o modelo ao lado para explorar em 360º.
+            </div>
+            <br>
+            <a href="segundo.html" class="av">Avançar</a>
+        </div>
+
+        <div class="modelo-container">
+            <spline-viewer url="https://prod.spline.design/snig6YGBOFcdUDlE/scene.splinecode"></spline-viewer>
+        </div>
+        
+    </div>
+    
+
+</body>
+</html>

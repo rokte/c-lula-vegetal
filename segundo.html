@@ -1,0 +1,166 @@
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<script type="module" defer src="https://unpkg.com/@splinetool/viewer@1.12.95/build/spline-viewer.js"></script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+    }
+
+    body {
+        background-color: #0d1310;
+        color: #f8fafc;
+        display: flex;
+        min-height: 100vh;
+        overflow: hidden; 
+    }
+
+    .container {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+    }
+
+  
+    .texto-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 40px 5% 40px 8%;
+        overflow-y: auto; 
+        z-index: 2;
+        background: linear-gradient(90deg, #0d1310 80%, transparent);
+    }
+
+    .tag {
+        color: #4ade80;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    .av {
+        display: inline-block;
+        margin-top: 24px;
+        padding: 14px 24px;
+        background-color: rgba(74, 222, 128, 0.13);
+        color: #4ade80;
+        text-decoration: none;
+        border: 1px solid rgba(74, 222, 128, 0.35);
+        border-radius: 8px;
+        font-weight: 700;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .av:hover {
+        background-color: rgba(74, 222, 128, 0.22);
+        transform: translateY(-1px);
+    }
+
+    h1 {
+        font-size: 4.5rem;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 24px;
+    }
+
+    h1 span {
+        color: #4ade80;
+    }
+
+    p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: #a1a1aa;
+        max-width: 560px;
+        margin-bottom: 18px;
+    }
+
+    .dica-interativa {
+        display: inline-flex;
+        align-items: center;
+        background-color: rgba(74, 222, 128, 0.05);
+        border: 1px solid rgba(74, 222, 128, 0.2);
+        border-left: 4px solid #4ade80;
+        padding: 16px 24px;
+        border-radius: 8px;
+        color: #e2e8f0;
+        font-weight: 500;
+        max-width: fit-content;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .modelo-container {
+        flex: 1.2;
+        height: 100vh;
+    }
+
+    spline-viewer {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media (max-width: 900px) {
+        body {
+            overflow-y: auto;
+        }
+
+        .container {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .texto-container {
+            overflow: visible;
+            padding: 60px 30px;
+            text-align: center;
+            align-items: center;
+        }
+
+        .modelo-container {
+            height: 70vh;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        
+    }
+</style>
+<div class="container">
+    <div class="texto-container">
+        <span class="tag">Estrutura Celular</span>
+        <h1>Partes da <br><span>Célula Vegetal</span></h1>
+        
+        <p><strong>Parede Celular:</strong> Camada externa rígida composta principalmente por celulose. Sua função é proteger a célula, fornecer suporte estrutural e manter a forma da planta. Também impede que a célula se rompa quando há entrada excessiva de água.</p>
+
+        <p><strong>Membrana Plasmática:</strong> Estrutura fina e flexível localizada logo abaixo da parede celular. Atua como uma barreira seletiva, controlando cuidadosamente quais substâncias entram e saem da célula.</p>
+
+        <p><strong>Citoplasma:</strong> Substância gelatinosa que preenche o interior da célula. Nele estão presentes as organelas celulares e ocorrem diversas reações químicas essenciais.</p>
+
+        <p><strong>Núcleo:</strong> Centro de controle da célula, responsável por armazenar o DNA e coordenar todas as atividades celulares.</p>
+
+        <p><strong>Cloroplastos:</strong> Organelas responsáveis pela fotossíntese, contendo clorofila, que capta luz solar para produzir energia.</p>
+
+        <p><strong>Vacúolo Central:</strong> Grande estrutura que armazena água, nutrientes e resíduos, além de manter a pressão interna da célula.</p>
+
+        <p><strong>Mitocôndrias:</strong> Responsáveis pela produção de energia através da respiração celular.</p>
+
+        <div class="dica-interativa">
+            🌿 Role o texto e explore o modelo ao lado para aprender todas as estruturas.
+        </div>
+        <a href="index.html" class="av">Voltar</a>
+    </div>
+
+    <div class="modelo-container">
+        <spline-viewer url="https://prod.spline.design/snig6YGBOFcdUDlE/scene.splinecode"></spline-viewer>
+    </div>
+</div>
